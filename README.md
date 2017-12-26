@@ -1,6 +1,14 @@
 # Docker Image with InfluxDB and Grafana
 
-This is a Docker image based on the awesome [Docker Image with Telegraf (StatsD), InfluxDB and Grafana](https://github.com/samuelebistoletti/docker-statsd-influxdb-grafana) from [Samuele Bistoletti](https://github.com/samuelebistoletti).
+This is a Docker image based on Phil Hawthorne who forked from Samuel Bistoletti.
+
+Notes below are verbatum from Phil. I plan to make a few edits to suit my project better.
+
+Only change to date is to influxdb.conf which requires the max-row-limit be changed to "0" for the grafana dashboard in my ampread project to display correctly.
+
+Future tweaks to volumes and a move to current release of grafana and influxdb are planned.
+
+Phil's comments start now:
 
 The main point of difference with this image is:
 
