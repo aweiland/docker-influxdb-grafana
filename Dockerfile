@@ -15,8 +15,10 @@ ENV GRAFANA_VERSION 4.6.2
 ENV INFLUXDB_GRAFANA_DB datasource
 ENV INFLUXDB_GRAFANA_USER datasource
 ENV INFLUXDB_GRAFANA_PW datasource
-
 ENV GF_DATABASE_TYPE=sqlite3
+
+# Default Grafana PLUGINS to be installed (comma separated list)
+ENV GF_INSTALL_PLUGINS grafana-piechart-panel,briangann-gauge-panel
 
 # Fix bad proxy issue
 COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
