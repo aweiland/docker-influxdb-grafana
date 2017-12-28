@@ -4,14 +4,12 @@ MAINTAINER Paul Howarth
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
-# run a root set to true
+# to run as root set to true
 ENV RUNAS_UID0 true
 
 # Default versions
 ENV INFLUXDB_VERSION 1.4.2
 ENV GRAFANA_VERSION 4.6.2
-# ENV INFLUXDB_VERSION 1.2.0
-#ENV GRAFANA_VERSION 4.1.1-1484211277
 
 # Database Defaults
 ENV INFLUXDB_GRAFANA_DB datasource
