@@ -9,9 +9,9 @@ ENV RUNAS_UID0 true
 
 # Default versions
 ENV INFLUXDB_VERSION 1.4.2
-# ENV GRAFANA_VERSION 4.6.2
+ENV GRAFANA_VERSION 4.6.2
 # ENV INFLUXDB_VERSION 1.2.0
-ENV GRAFANA_VERSION 4.1.1-1484211277
+#ENV GRAFANA_VERSION 4.1.1-1484211277
 
 # Database Defaults
 ENV INFLUXDB_GRAFANA_DB datasource
@@ -59,7 +59,7 @@ RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION
     dpkg -i influxdb_${INFLUXDB_VERSION}_amd64.deb && rm influxdb_${INFLUXDB_VERSION}_amd64.deb
 
 # Install Grafana
-RUN wget https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb && \
+RUN wget https://grafanarel.s3.amazonaws.com/grafana-releases/release/grafana_${GRAFANA_VERSION}_amd64.deb && \
     dpkg -i grafana_${GRAFANA_VERSION}_amd64.deb && rm grafana_${GRAFANA_VERSION}_amd64.deb
 
 # Cleanup
