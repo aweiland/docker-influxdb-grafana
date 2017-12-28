@@ -68,7 +68,7 @@ RUN apt-get clean && \
 # Configure Supervisord, SSH and base env
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # COPY ssh/id_rsa .ssh/id_rsa
-COPY bash/profile .profile
+# COPY bash/profile .profile
 
 # Configure InfluxDB
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
