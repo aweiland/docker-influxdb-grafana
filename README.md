@@ -3,9 +3,9 @@
 This is a Docker image based on Phil Hawthorne who forked from Samuel Bistoletti.
 
 Change log:
-Update INFLUXDB_VERSION to 1.4.2
-Update GRAFANA_VERSION to 4.6.2
-Update influxdb.conf with "max-row-limit = 0" (required for ampread project to display data correctly)
+- Update INFLUXDB_VERSION to 1.4.2
+- Update GRAFANA_VERSION to 4.6.2
+- Update influxdb.conf with "max-row-limit = 0" (required for ampread project to display data correctly)
 
 ## Quick Start
 
