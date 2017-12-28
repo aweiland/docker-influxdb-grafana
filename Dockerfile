@@ -41,6 +41,7 @@ RUN apt-get -y update && \
   wget && \
  curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
  apt-get install -y nodejs
+ apt-get install -y adduser
 
 WORKDIR /root
 
