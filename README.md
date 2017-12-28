@@ -2,28 +2,10 @@
 
 This is a Docker image based on Phil Hawthorne who forked from Samuel Bistoletti.
 
-Notes below are verbatum from Phil. I plan to make a few edits to suit my project better.
-
-Only change to date is to influxdb.conf which requires the max-row-limit be changed to "0" for the grafana dashboard in my ampread project to display correctly.
-
-Future tweaks to volumes and a move to current release of grafana and influxdb are planned.
-
-Phil's comments start now:
-
-The main point of difference with this image is:
-
-* Persistence is supported via mounting volumes to a Docker container
-* Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed
-* Telegraf (StatsD) is not included in this container
-
-The main purpose of this image is to be used to show data from a [Home Assistant](https://home-assistant.io) installation. For more information on how to do that, please see my website about how I use this container.
-
-| Description  | Value |
-|--------------|-------|
-| Docker Image | 2.0.0 |
-| Ubuntu       | 16.04 |
-| InfluxDB     | 1.2   |
-| Grafana      | 4.1.1 |
+Change log:
+Update INFLUXDB_VERSION to 1.4.2
+Update GRAFANA_VERSION to 4.6.2
+Update influxdb.conf with "max-row-limit = 0" (required for ampread project to display data correctly)
 
 ## Quick Start
 
@@ -38,7 +20,7 @@ docker run -d \
   -p 22022:22 \
   -v /path/for/influxdb:/var/lib/influxdb \
   -v /path/for/grafana:/var/lib/grafana \
-  philhawthorne/docker-influxdb-grafana:latest
+  pahowart/docker-influxdb-grafana:latest
 ```
 
 To stop the container launch:
