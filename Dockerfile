@@ -9,7 +9,7 @@ ENV RUNAS_UID0 true
 
 # Default versions
 ENV INFLUXDB_VERSION 1.4.2
-ENV GRAFANA_VERSION  4.6.2
+ENV GRAFANA_VERSION 4.6.2
 
 # Database Defaults
 ENV INFLUXDB_GRAFANA_DB datasource
