@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # run a root set to true
-ENV RUNAS_UID0 true
+# ENV RUNAS_UID0 true
 
 # Default versions
 ENV INFLUXDB_VERSION 1.4.2
