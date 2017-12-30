@@ -13,14 +13,14 @@ To start the container with persistence you can use the following:
 
 ```sh
 docker run -d \
-  --name docker-influxdb-grafana \
+  --name influxdb-grafana \
   -p 3003:3003 \
   -p 3004:8083 \
   -p 8086:8086 \
   -p 22022:22 \
   -v /path/for/influxdb:/var/lib/influxdb \
   -v /path/for/grafana:/var/lib/grafana \
-  pahowart/docker-influxdb-grafana:latest
+  pahowart/influxdb-grafana:latest
 ```
 
 To stop the container launch:
