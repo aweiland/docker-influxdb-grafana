@@ -19,7 +19,7 @@ docker run -d \
   -p 8086:8086 \
   -p 22022:22 \
   -v /path/for/influxdb:/var/lib/influxdb \
-  -v /path/for/grafana:/var/lib/grafana \
+  -v /path/for/grafana:/data \
   pahowart/influxdb-grafana:latest
 ```
 
