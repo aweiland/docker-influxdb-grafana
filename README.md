@@ -3,9 +3,9 @@
 This is a Docker image based on Phil Hawthorne who forked from Samuel Bistoletti.
 
 Change log:
-- Update INFLUXDB_VERSION to 1.4.2
+- Update INFLUXDB_VERSION to 1.4.2 (Note that as of version 1.3 there the UI on port 8083 is depreciated) 
 - Update GRAFANA_VERSION to 4.6.2
-- Update influxdb.conf with "max-row-limit = 0" (required for ampread project to display data correctly)
+- Update influxdb.conf with "max-row-limit = 0" (This is now the default as of version 1.3)
 
 ## Quick Start
 
@@ -15,7 +15,6 @@ To start the container with persistence you can use the following:
 docker run -d \
   --name influxdb-grafana \
   -p 3003:3003 \
-  -p 3004:8083 \
   -p 8086:8086 \
   -p 22022:22 \
   -v /path/for/influxdb:/var/lib/influxdb \
@@ -41,7 +40,6 @@ docker start docker-influxdb-grafana
 Host		Container		Service
 
 3003		3003			grafana
-3004		8083			influxdb-admin
 8086		8086			influxdb
 22022		22				sshd
 ```
@@ -75,11 +73,6 @@ Now you are ready to add your first dashboard and launch some queries on a datab
 
 ## InfluxDB
 
-### Web Interface
-
-Open <http://localhost:3004>
-
-```
 Username: root
 Password: root
 Port: 8086
