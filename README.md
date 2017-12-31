@@ -19,7 +19,7 @@ docker run -d \
   -p 22022:22 \
   -v /path/for/influxdb:/var/lib/influxdb \
   -v /path/for/grafana:/data \
-  pahowart/influxdb-grafana:latest
+  pahowart/docker-influxdb-grafana:latest
 ```
 
 To stop the container launch:
