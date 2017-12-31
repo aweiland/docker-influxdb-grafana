@@ -3,7 +3,7 @@
 This is a Docker image based on Phil Hawthorne who forked from Samuel Bistoletti.
 
 Change log:
-- Update INFLUXDB_VERSION to 1.4.2 (Note that as of version 1.3 there the UI on port 8083 is depreciated) 
+- Update INFLUXDB_VERSION to 1.4.2 (Note that as of version 1.3 the UI on port 8083 is depreciated) 
 - Update GRAFANA_VERSION to 4.6.2
 - Update influxdb.conf with "max-row-limit = 0" (This is now the default as of version 1.3)
 
@@ -25,13 +25,13 @@ docker run -d \
 To stop the container launch:
 
 ```sh
-docker stop docker-influxdb-grafana
+docker stop influxdb-grafana
 ```
 
 To start the container again launch:
 
 ```sh
-docker start docker-influxdb-grafana
+docker start influxdb-grafana
 ```
 
 ## Mapped Ports
