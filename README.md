@@ -82,3 +82,16 @@ Port: 8086
 
 1. Establish a ssh connection with the container
 2. Launch `influx` to open InfluxDB Shell (CLI)
+
+Sample CLI commands
+Create a new database:
+
+CREATE DATABASE <dbname>
+
+Show list of databases:
+
+SHOW DATABASES
+
+Use a database:
+
+USE <dbname>
