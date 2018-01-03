@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # to run as root set to true
-ENV RUNAS_UID0 true
+# ENV RUNAS_UID0 true
 
 # Default versions
 ENV INFLUXDB_VERSION 1.4.2
@@ -69,8 +69,8 @@ RUN apt-get clean && \
 
 # Configure Supervisord, SSH and base env
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-# COPY ssh/id_rsa .ssh/id_rsa
-# COPY bash/profile .profile
+COPY ssh/id_rsa .ssh/id_rsa
+COPY bash/profile .profile
 
 # Configure InfluxDB
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
