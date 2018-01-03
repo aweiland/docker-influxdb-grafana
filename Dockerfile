@@ -17,7 +17,7 @@ ENV INFLUXDB_GRAFANA_USER datasource
 ENV INFLUXDB_GRAFANA_PW datasource
 
 # Default Grafana PLUGINS to be installed (comma separated list)
-ENV GF_INSTALL_PLUGINS grafana-piechart-panel,briangann-gauge-panel
+ENV GF_INSTALL_PLUGINS=grafana-piechart-panel,briangann-gauge-panel
 
 # Fix bad proxy issue
 COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
