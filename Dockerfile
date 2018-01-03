@@ -35,8 +35,6 @@ RUN apt-get -y update && \
   git \
   htop \
   libfontconfig \
-  mysql-client \
-  mysql-server \
   nano \
   net-tools \
   openssh-server \
