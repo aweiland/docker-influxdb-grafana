@@ -76,11 +76,6 @@ COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ssh/id_rsa .ssh/id_rsa
 COPY bash/profile .profile
 
-# Configure MySql
-COPY scripts/setup_mysql.sh /tmp/setup_mysql.sh
-
-RUN /tmp/setup_mysql.sh
-
 # Configure InfluxDB
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 COPY influxdb/init.sh /etc/init.d/influxdb
