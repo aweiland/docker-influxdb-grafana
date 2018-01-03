@@ -15,7 +15,7 @@ ENV GRAFANA_VERSION 4.6.3
 ENV INFLUXDB_GRAFANA_DB datasource
 ENV INFLUXDB_GRAFANA_USER datasource
 ENV INFLUXDB_GRAFANA_PW datasource
-ENV GF_DATABASE_TYPE=sqlite3
+ENV GF_DATABASE_TYPE=mysql
 
 # Default Grafana PLUGINS to be installed (comma separated list)
 ENV GF_INSTALL_PLUGINS grafana-piechart-panel,briangann-gauge-panel
