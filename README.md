@@ -1,11 +1,13 @@
 # Docker Image with InfluxDB and Grafana
 
-This is a Docker image based on Phil Hawthorne who forked from Samuel Bistoletti.
+This is a Docker image based on Phil Hawthorne.
 
 Change log:
-- Update INFLUXDB_VERSION to 1.4.2 (Note that as of version 1.3 the UI on port 8083 is depreciated) 
-- Update GRAFANA_VERSION to 4.6.3
+- Update INFLUXDB_VERSION to 1.4.2 (Note that as of version 1.3 the UI on port 8083 is removed)
 - Update influxdb.conf with "max-row-limit = 0" (This is now the default as of version 1.3)
+- Update GRAFANA_VERSION to 4.6.3
+- Switch Grafana db back to mysql due to crashes using sqlite3 with Grafana 4.6
+
 
 ## Quick Start
 
