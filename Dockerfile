@@ -16,9 +16,6 @@ ENV INFLUXDB_GRAFANA_DB datasource
 ENV INFLUXDB_GRAFANA_USER datasource
 ENV INFLUXDB_GRAFANA_PW datasource
 
-ENV MYSQL_GRAFANA_USER grafana
-ENV MYSQL_GRAFANA_PW grafana
-
 # Default Grafana PLUGINS to be installed (comma separated list)
 ENV GF_INSTALL_PLUGINS grafana-piechart-panel,briangann-gauge-panel
 
