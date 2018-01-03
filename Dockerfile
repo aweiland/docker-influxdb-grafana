@@ -15,7 +15,9 @@ ENV GRAFANA_VERSION 4.6.3
 ENV INFLUXDB_GRAFANA_DB datasource
 ENV INFLUXDB_GRAFANA_USER datasource
 ENV INFLUXDB_GRAFANA_PW datasource
-ENV GF_DATABASE_TYPE=mysql
+
+ENV MYSQL_GRAFANA_USER grafana
+ENV MYSQL_GRAFANA_PW grafana
 
 # Default Grafana PLUGINS to be installed (comma separated list)
 ENV GF_INSTALL_PLUGINS grafana-piechart-panel,briangann-gauge-panel
@@ -36,6 +38,8 @@ RUN apt-get -y update && \
   git \
   htop \
   libfontconfig \
+  mysql-client \
+  mysql-server \
   nano \
   net-tools \
   openssh-server \
