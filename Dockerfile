@@ -48,11 +48,14 @@ WORKDIR /root
 
 RUN mkdir -p /var/log/supervisor && \
     mkdir -p /var/run/sshd && \
-    sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     echo 'root:root' | chpasswd && \
+    sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     rm -rf .ssh && \
     rm -rf .profile && \
     mkdir .ssh
+    
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 # Install InfluxDB
 RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
@@ -68,7 +71,7 @@ RUN apt-get clean && \
 
 # Configure Supervisord, SSH and base env
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY ssh/id_rsa .ssh/id_rsa
+#COPY ssh/id_rsa .ssh/id_rsa
 COPY bash/profile .profile
 
 # Configure InfluxDB
