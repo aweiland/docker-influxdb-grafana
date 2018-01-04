@@ -4,9 +4,6 @@ MAINTAINER Paul Howarth
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
-# to run as root set to true
-# ENV RUNAS_UID0 true
-
 # Default versions
 ENV INFLUXDB_VERSION 1.4.2
 ENV GRAFANA_VERSION 4.6.2
@@ -54,8 +51,13 @@ RUN mkdir -p /var/log/supervisor && \
     rm -rf .profile && \
     mkdir .ssh
     
-# SSH login fix. Otherwise user is kicked off after login
+# SSH login fix and startup
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+ENV NOTVISIBLE "in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
 
 # Install InfluxDB
 RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
@@ -71,8 +73,6 @@ RUN apt-get clean && \
 
 # Configure Supervisord, SSH and base env
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-#COPY ssh/id_rsa .ssh/id_rsa
-COPY bash/profile .profile
 
 # Configure InfluxDB
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
