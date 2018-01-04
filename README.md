@@ -65,7 +65,7 @@ Password: root
 1. Using the wizard click on `Add data source`
 2. Choose a `name` for the source and flag it as `Default`
 3. Choose `InfluxDB` as `type`
-4. Choose `direct` as `access`
+4. Choose `proxy` as `access` (Note "proxy" means grafana backend will pull data from influx. "direct" means browser will connect directly to influx)
 5. Fill remaining fields as follows and click on `Add` without altering other fields
 
 Basic auth and credentials must be left unflagged. Proxy is not required.
