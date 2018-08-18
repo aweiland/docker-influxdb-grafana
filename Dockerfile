@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Default versions
-ENV INFLUXDB_VERSION 1.4.2
+ENV INFLUXDB_VERSION 1.6.1
 ENV GRAFANA_VERSION 5.2.2
 
 # Database Defaults
