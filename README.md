@@ -17,10 +17,12 @@ docker run -d \
   --name influxdb-grafana \
   -p 3003:3003 \
   -p 8086:8086 \
-  -p 22022:22 \
   -v /path/for/influxdb:/var/lib/influxdb \
-  -v /path/for/grafana:/data \
-  pahowart/docker-influxdb-grafana:latest
+  -v /path/for/grafana:/var/lib/grafana \
+  -v /path/for/grafana/plugins:/var/lib/grafana/plugins \
+  -v /path/for/grafana/provisioning:/var/lib/grafana/provisioning \
+  -v /path/for/grafana/logs:/var/log/grafana \
+  pahowart/docker-influxdb-grafana:latest \
 ```
 
 To stop the container launch:
@@ -36,18 +38,12 @@ docker start influxdb-grafana
 ```
 
 ## Mapped Ports
-
+. 
 ```
 Host		Container		Service
 
 3003		3003			grafana
 8086		8086			influxdb
-22022		22				sshd
-```
-## SSH
-
-```sh
-ssh root@localhost -p 22022
 ```
 Password: root
 
@@ -81,7 +77,7 @@ Port: 8086
 
 ### InfluxDB Shell (CLI)
 
-1. Establish a ssh connection with the container
+1. From the docker host open a terminal and enter --> docker exec -it "containerID" bash
 2. Launch `influx` to open InfluxDB Shell (CLI)
 
 Sample CLI commands
