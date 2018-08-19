@@ -43,7 +43,7 @@ RUN apt-get -y update && \
 
 WORKDIR /root
 
-RUN mkdir -p /var/log/supervisor && \
+#RUN mkdir -p /var/log/supervisor && \
     #mkdir -p /var/run/sshd && \
     echo 'root:root' | chpasswd && \
     #sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
