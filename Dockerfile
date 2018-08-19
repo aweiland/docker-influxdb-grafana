@@ -45,7 +45,7 @@ WORKDIR /root
 
 #RUN mkdir -p /var/log/supervisor && \
     #mkdir -p /var/run/sshd && \
-    echo 'root:root' | chpasswd && \
+    #echo 'root:root' | chpasswd && \
     #sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     #rm -rf .ssh && \
     #rm -rf .profile && \
